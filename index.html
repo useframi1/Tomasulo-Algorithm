@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <header>
+      <h1>Tomasulo's Algorithm</h1>
+      <button class="next_btn" disabled>Next</button>
+    </header>
+    <main>
+      <h3>Press + to add instruction:</h3>
+      <section class="instructions">
+        <div class="row invalid">
+          <button class="add_inst_btn" disabled>+</button>
+          <div class="inst_def">
+            <select class="inst_type">
+              <option value="" selected disabled>Instruction</option>
+              <option value="load">LOAD</option>
+              <option value="store">STORE</option>
+              <option value="bne">BNE</option>
+              <option value="call">CALL</option>
+              <option value="return">RETURN</option>
+              <option value="add">ADD</option>
+              <option value="addi">ADDI</option>
+              <option value="nand">NAND</option>
+              <option value="div">DIV</option>
+            </select>
+            <div class="space"></div>
+            <input type="text" placeholder="RA" class="inst_field" disabled />
+            <div class="space"></div>
+            <input type="text" placeholder="RB" class="inst_field" disabled />
+            <div class="space"></div>
+            <input type="text" placeholder="RC" class="inst_field" disabled />
+            <div class="space"></div>
+            <input
+              type="text"
+              placeholder="offset"
+              class="inst_field"
+              disabled
+            />
+            <div class="space"></div>
+            <input type="text" placeholder="imm" class="inst_field" disabled />
+            <h4 class="inst" hidden></h4>
+          </div>
+          <button class="delete_inst_btn" hidden>Delete</button>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

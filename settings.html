@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="settings_style.css" />
+    <title>Settings</title>
+  </head>
+  <body>
+    <main>
+      <button class="start_btn" disabled>Start</button>
+      <div class="instruction_addr_cont">
+        <h3>Specify starting address for instructions:</h3>
+        <input
+          type="text"
+          placeholder="Starting address"
+          class="starting_addr"
+        />
+      </div>
+      <h3>Initialize Data Memory:</h3>
+      <div class="values">
+        <div class="row invalid">
+          <button class="add_value_btn" disabled>+</button>
+          <div class="value_def">
+            <input type="text" placeholder="Address" class="value_field" />
+            <div class="space"></div>
+            <input type="text" placeholder="Value" class="value_field" />
+            <h4 class="value" hidden></h4>
+          </div>
+          <button class="delete_value_btn" hidden>Delete</button>
+        </div>
+      </div>
+    </main>
+    <script src="settings_script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* html,
+body {
+  overflow-y: auto;
+} */
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f3f3f3;
+}
+
+header {
+  padding: 20px;
+  padding-bottom: 0px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 36px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+  margin-bottom: 30px;
+  text-decoration: underline;
+}
+
+h3 {
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 10px;
+  color: green;
+}
+
+main {
+  padding: 20px;
+  padding-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: auto;
+  height: 65%;
+}
+
+.next_btn {
+  align-self: flex-end;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 10px;
+  width: 100px;
+  background-color: limegreen;
+  border: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease;
+  margin-right: 100px;
+  cursor: pointer;
+}
+
+.next_btn:hover {
+  background-color: green;
+}
+
+.next_btn:disabled {
+  background-color: green;
+  cursor: not-allowed;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.add_inst_btn {
+  width: 50px;
+  height: 70%;
+  border-radius: 20px;
+  font-size: 26px;
+  background-color: limegreen;
+  border: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.add_inst_btn:hover {
+  background-color: green;
+}
+
+.add_inst_btn:disabled {
+  background-color: green;
+  cursor: not-allowed;
+}
+
+.inst_def {
+  display: flex;
+  flex-direction: row;
+  background-color: lightgrey;
+  border-radius: 10px;
+  height: 100%;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: center;
+}
+
+.space {
+  width: 20px;
+}
+
+.inst_type {
+  width: 200px;
+  height: 70%;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.inst_type option {
+  padding: 20px;
+  background: #f3f3f3;
+}
+
+.inst_field {
+  width: 80px;
+  height: 70%;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.inst {
+  width: 180px;
+  font-size: 14px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 20px;
+}
+
+.delete_inst_btn {
+  width: fit-content;
+  padding: 10px;
+  height: 70%;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: crimson;
+  color: white;
+  border: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s ease;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.delete_inst_btn:hover {
+  background-color: red;
+}

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style_algorithm.css" />
+    <title>Algorithm</title>
+  </head>
+  <body>
+    <!-- <section class="top"> -->
+    <section class="left">
+      <div id="container_tracing_table">
+        <h4>Tracing Table:</h4>
+        <table class="left_table" id="tracing_table">
+          <tr>
+            <th>Instructions</th>
+            <th>Issued</th>
+            <th>Start Exec</th>
+            <th>End Exec</th>
+            <th>Written</th>
+          </tr>
+        </table>
+      </div>
+      <div id="container_reservations_table">
+        <h4>Reservations Table:</h4>
+        <table class="left_table" id="reservation_table">
+          <tr>
+            <th>Name</th>
+            <th>Busy</th>
+            <th>Op</th>
+            <th>Vj</th>
+            <th>Vk</th>
+            <th>Qj</th>
+            <th>Qk</th>
+            <th>A</th>
+          </tr>
+          <tr>
+            <td>LOAD1</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>LOAD2</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>STORE1</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>STORE2</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>BNE</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>CALL/RETURN</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>ADD/ADDI1</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>ADD/ADDI2</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>ADD/ADDI3</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>NAND</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>DIV</td>
+            <td>N</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <section class="middle">
+      <h2 class="cycle">Cycle 0</h2>
+      <button class="step_btn">Step</button>
+      <button class="restart_btn" disabled>Restart</button>
+      <div class="metrics">
+        <h4 class="ipc" hidden>IPC = 0.33</h4>
+        <h4 class="misprediction" hidden>Branch misprediction = 0.67%</h4>
+      </div>
+    </section>
+    <section class="right">
+      <div id="memories">
+        <div id="container_inst_mem">
+          <h4>Instruction Memory:</h4>
+          <table class="right_table" id="inst_mem">
+            <tr>
+              <th>Instruction</th>
+            </tr>
+          </table>
+        </div>
+        <div id="container_data_mem">
+          <h4>Data Memory:</h4>
+          <table class="right_table" id="data_mem">
+            <tr>
+              <th>Address</th>
+              <th>Value</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="container_reg_stat">
+        <h4>Register Status:</h4>
+        <table class="right_table" id="reg_status">
+          <tr>
+            <th>Reg</th>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <th>Qi</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+      <div id="container_reg_file">
+        <h4>Register File:</h4>
+        <table class="right_table" id="reg_file">
+          <tr>
+            <th>Reg</th>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <th>Value</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+    <!-- </section> -->
+    <script src="algorithm_script.js"></script>
+  </body>
+</html>
