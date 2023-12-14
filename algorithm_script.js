@@ -178,9 +178,6 @@ function updateDataMemoryTable(initialize) {
     }
   }
 
-  for (let i = 0; i < 5; i++) {
-    console.log(i + ' = ' + DataMem[i]);
-  }
   var rowCount = dataMemTable.rows.length;
   for (let i = rowCount - 1; i > 0; i--) {
     dataMemTable.deleteRow(i);
@@ -562,27 +559,9 @@ function EXECUTE(inst) {
           inst.startExec = Cycles;
           inst.executed = Cycles;
           writtingQueue.push(inst);
+          branchesExecuted++;
           instructionsExecuted++;
         }
-        // if (
-        //   RS[index].Qj == null &&
-        //   RS[index].Qk == null &&
-        //   inst.C_Exec < inst.C_Needed - 1
-        // ) {
-        //   if (Cycles == inst.issued + 1)
-        //     RS[index].A = RS[index].A + inst.address;
-        //   if (inst.C_Exec == 0) inst.startExec = Cycles;
-        //   inst.C_Exec++;
-        // } else if (
-        //   RS[index].Qj == null &&
-        //   RS[index].Qk == null &&
-        //   inst.executed == null
-        // ) {
-        //   inst.executed = Cycles;
-        //   writtingQueue.push(inst);
-        //   branchesExecuted++;
-        //   instructionsExecuted++;
-        // }
       }
     }
   }
@@ -671,7 +650,7 @@ function WRITE(inst, minIssuedIndex) {
         DataMem[RS[index].A] = RS[index].Vj;
       } else if (inst.Op == 'bne') {
         if (RS[index].Vj != RS[index].Vk) {
-          head = RS[index].A + inst.address + 1;
+          head = RS[index].A + 1;
           branchFlag = true;
           branchesTaken++;
 
@@ -689,7 +668,6 @@ function WRITE(inst, minIssuedIndex) {
         if (RegStat[1] == RS[index].Name) {
           RegFile[1] = inst.address + 1;
         }
-        console.log('starting address = ' + parseInt(startingAddress));
         head = RS[index].A - parseInt(startingAddress);
         jumpFlag = 2;
         output = inst.address + 1;
@@ -700,7 +678,6 @@ function WRITE(inst, minIssuedIndex) {
     }
   }
   inst.written = Cycles;
-  console.log('output = ' + output);
   for (let i = 0; i < RS.length; i++) {
     if (RS[i].Name != RS[index].Name) {
       if (RS[i].Qj == RS[index].Name) {
@@ -776,7 +753,6 @@ function Main() {
     WRITE(writtingQueue[minIssuedIndex], minIssuedIndex);
   }
 
-  console.log(jumpFlag);
   if (!branchFlag && head < inst_Q.length && jumpFlag == 0) {
     ISSUE();
   }
